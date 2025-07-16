@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator function</h1>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <div id="result"></div>
+        <button onclick="addition()">addition</button>
+        <button onclick="subtraction()">subtraction</button>
+        <button onclick="multiplication()">multiplication</button>
+        <button onclick="division()"> division</button>
+
+    </div>
+    <script>
+        
+        function addition(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = document.getElementById("result");
+            result.textContent = "Result: " + (num1 + num2);
+        }
+        function subtraction(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = document.getElementById("result");
+            result.textContent = "Result: " + (num1 - num2);
+        }
+        function multiplication(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = document.getElementById("result");
+            result.textContent = "Result: " + (num1 * num2);
+        }
+        function division(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = document.getElementById("result");
+            if (num2 === 0) {
+                result.textContent = "Cannot divide by zero.";
+            } else {
+                result.textContent = "Result: " + (num1 / num2);
+            }
+        }
+    </script>
+</body>
+</html>

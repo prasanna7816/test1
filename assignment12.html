@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(45deg, pink, rgb(109, 109, 238));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Greeting function</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="greet()">Greet</button>
+        <div id="greetingMessage"></div>
+
+    </div>
+
+    <script>
+        function greet(){
+            const name = document.getElementById("nameInput").value;
+            const greetingMessage = document.getElementById("greetingMessage");
+
+            if (name === "") {
+                greetingMessage.innerHTML = "Please enter your name.";
+                greetingMessage.style.color = "red";
+            } else {
+                greetingMessage.innerHTML = "Hello, " + name + "";
+                greetingMessage.style.color = "blue";
+            }
+        }
+    </script>
+</body>
+</html>
