@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Age Restricition</h1>
+        <input type="number" id="age" placeholder="Enter your age">
+        <button onclick="checkAge()">Check Age</button>
+        <div id="message"></div>
+
+        <script>
+            function checkAge() {
+                const age = parseInt(document.getElementById("age").value);
+                const result = document.getElementById("message");
+
+                if (age < 18) {
+                    result.innerHTML = "You are not allowed to enter.";
+                    result.style.color = "red";
+                } else if (age >= 18 && age <= 60) {
+                    result.innerHTML = "You are allowed to enter.";
+                    result.style.color = "green";
+                } else if (age > 60) {
+                    result.innerHTML = "You are allowed to enter, but please be cautious.";
+                    result.style.color = "orange";
+                } else {
+                    result.innerHTML = "Please enter a valid age.";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

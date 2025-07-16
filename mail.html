@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passwordceck</title>
+</head>
+<style>
+      body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    
+
+    h2 {
+      color: #1f4d48;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #12332f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .numBer1{
+        height: 30px;
+        width: 280px;
+    }
+    h1{
+        background: linear-gradient(90deg, rgb(159, 159, 239) rgb(18, 16, 16));
+    }
+    </style>
+<body>
+    
+    <div class="container">
+        <h1> password checker</h1>
+
+        <p><input type="text" id="user" placeholder="User Nmae" class="numBer1"></p>
+        
+        <p><input type="password" id="password1" placeholder="Enter your password" class=" numBer1"></p>
+        <button onclick="checkPassword()">Login</button>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
+  <script>
+    function checkPassword(){
+        let username1 = document.getElementById("user").value;
+        let username = "prasanna";
+        let password = document.getElementById("password1").value;
+        let correctpassword = "prasanna@78";
+        let result = document.getElementById("result");
+
+        let user = 0;
+
+        while (user < 1) {
+        if(username1 === username){
+            document.getElementById("result").innerText = "username is correct";
+            window.location.href="num.html";
+        } else{
+            document.getElementById("result").innerText = " username is incorrect";
+        }
+        user++;
+      }
+
+
+       let Pass = 0;
+        do {
+        if(password === correctpassword){
+            document.getElementById("result").innerText = "password is correct";
+        } else{
+            document.getElementById("result").innerText = "incorrect password";
+        } 
+         Pass++;
+        } while (Pass < 1);
+
+    
+    }
+  </script>
+  
+</body>
+</html>
+

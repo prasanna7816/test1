@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gold Loan Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: #e6e6e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .calculator-container {
+      background: wheat;
+      padding: 30px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      width: 500px;
+    }
+    h2 {
+      color: blue;
+      font-weight: bold;
+      text-align: center;
+    }
+    h6 {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: rgb(144, 144, 207);
+      color: white;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-container">
+    <h2>Gold Loan Calculator</h2>
+    <h6>Gold Weight (grams)</h6>
+    <input type="number" id="weight" placeholder="e.g., 20" />
+
+    <h6 >Gold Carats</h6>
+    <select id="prasanna">
+      <option value="24">24K</option>
+      <option value="22">22K</option>
+      <option value="20">20K</option>
+      <option value="18">18K</option>
+    </select>
+
+    <button onclick="calculateLoan()">Calculate Loan Amount</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateLoan() {
+      let weight = parseFloat(document.getElementById('weight').value);
+      let carat = parseInt(document.getElementById('prasanna').value);
+      let ratePerGram = 0;
+
+      
+
+      if (carat === 24) {
+        ratePerGram = 12000;
+      } else if (carat === 22) {
+        ratePerGram = 10000;
+      } else if (carat === 20) {
+        ratePerGram = 8000;
+      } else if (carat === 18) {
+        ratePerGram = 6000;
+      } else {
+        document.getElementById('result').innerText = "Invalid gold carat selected.";
+        return;
+      }
+
+      let goldValue = weight * ratePerGram;
+      let loanAmount = (goldValue * 50) / 100;
+      let interest = (loanAmount * 2) / 100;
+
+      document.getElementById('result').innerText =
+        `Loan Amount: ₹${loanAmount.toFixed(2)} | Interest per month: ₹${interest.toFixed(2)}`;
+    }
+  </script>
+  
+</body>
+</html>

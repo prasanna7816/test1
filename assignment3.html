@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div  class="container">
+        <h2>Grade Calculation</h2>
+        <input type="number" id="marksInput" placeholder="Enter marks (0-100)" >
+        <button onclick="calculateGrade()">Calculate Grade</button>
+        <div id="result"></div>
+
+        <script>
+            function calculateGrade() {
+        let marks = document.getElementById("marksInput").value;
+        let result = document.getElementById("result");
+        
+
+        if (marks === ""){
+            result.innerHTML = "Please enter marks.";
+            result.style.color = "red";
+        } else if (marks < 0 || marks > 100) {
+            result.innerHTML = "Marks must be between 0 and 100.";
+            result.style.color = "orange";
+        } else if (marks >= 90) {
+            result.innerHTML = "Grade: A";
+            result.style.color = "green";
+        } else if (marks >= 80) {
+            result.innerHTML = "Grade: B";
+            result.style.color = "blue";
+        } else if (marks >= 70) {
+            result.innerHTML = "Grade: C";
+            result.style.color = "purple";
+        } else if (marks >= 60) {
+            result.innerHTML = "Grade: D";
+            result.style.color = "brown";
+        } else {
+            result.innerHTML = "Grade: F";
+            result.style.color = "red";
+        }
+    }
+    </script>
+</body>
+</html>

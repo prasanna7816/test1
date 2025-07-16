@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Score Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .row {
+      margin: 15px 0;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      height: 35px;
+      font-size: 16px;
+      text-align: center;
+      margin: 5px;
+    }
+
+    button {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+
+    .result {
+      font-size: 18px;
+      margin: 10px;
+      color:  black;
+    }
+     .user1 {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .user2 {
+      color: red;
+      font-weight: bold;
+    }
+    .label {
+      display: none;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Check Row Scores</h2>
+
+  
+  <div class="row">
+    <input type="number" id="input1">
+    <input type="number" id="input2">
+    <input type="number" id="input3">
+  </div>
+  <label id="row1" class="label"></label>
+ 
+
+  
+  <div class="row">
+    <input type="number" id="input4">
+    <input type="number" id="input5">
+    <input type="number" id="input6">
+  </div>
+  <label id="row2" class="label"></label>
+  
+  
+  <div class="row">
+    <input type="number" id="input7">
+    <input type="number" id="input8">
+    <input type="number" id="input9">
+  </div>
+  <label id="row3" class="label"></label><br>
+  
+
+  <button onclick="checkScore()">Check</button>
+
+  
+  <div class="result" id="result1"></div>
+  <div class="result" id="result12"></div>
+  <div class="result" id="result3"></div>
+  <div class="result" id="result4"></div>
+
+  <script>
+    function checkScore(){
+      let total1 = 0;
+      let a = 1;
+      let b = 2;
+      let c = 3;
+
+    if(a==0|| b==0|| c==0){
+      console.log("enter a number");
+    }else{
+      console.log(a+b+c);
+    }
+    for (let i = 1; i <= 3; i++) {
+      total1 += parseFloat(document.getElementById("input" + i).value);
+    }
+    let result1 = document.getElementById("result1");
+    let row1Label = document.getElementById("row1");
+    row1Label.style.display = "inline";
+   
+
+    if (total1 % 2 === 0) {
+      row1Label.innerText = "Row 1 Total: " + total1 + " (Even - User1)";
+      row1Label.className = "label user1";
+    } else {
+      row1Label.innerText = "Row 1 Total: " + total1 + " (Odd - User2)";
+      row1Label.className = "label user2";
+    }
+
+    
+    let total2 = 0;
+   
+    for (let i = 4; i <= 6; i++) {
+      total2 += parseFloat(document.getElementById("input" + i).value);
+    }
+    let result2 = document.getElementById("result2");
+    let row2Label = document.getElementById("row2");
+    row2Label.style.display = "inline";
+
+    if (total2 % 2 === 0) {
+      row2Label.innerText = "Row 2 Total: " + total2 + " (Even - User1)";
+      row2Label.className = "label user1";
+    } else {
+      row2Label.innerText = "Row 2 Total: " + total2 + " (Odd - User2)";
+      row2Label.className = "label user2";
+    }
+
+    
+    let total3 = 0;
+    
+    for (let i = 7; i <= 9; i++) {
+      total3 += parseFloat(document.getElementById("input" + i).value);
+    }
+    let result3 = document.getElementById("result3");
+    let row3Label = document.getElementById("row3");
+    row3Label.style.display = "inline";
+
+    if (total3 % 2 === 0) {
+      row3Label.innerText = "Row 3 Total: " + total3 + " (Even - User1)";
+      row3Label.className = "label user1";
+    } else {
+      row3Label.innerText = "Row 3 Total: " + total3 + " (Odd - User2)";
+      row3Label.className = "label user2";
+    }
+
+    
+    let grandTotal = total1 + total2 + total3;
+    let grandResult = document.getElementById("result4");
+
+    if (grandTotal % 2 === 0) {
+      grandResult.innerText = "Total Score: " + grandTotal + " (Even - User1)";
+      grandResult.className = "result user1";
+    } else {
+      grandResult.innerText = "Total Score: " + grandTotal + " (Odd - User2)";
+      grandResult.className = "result user2";
+    }
+  }
+
+
+
+      
+  
+  </script>
+
+</body>
+</html>
+

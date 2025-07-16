@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temperature Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Temperature Checker</h2>
+    <input type="number" id="temperatureInput" placeholder="Enter °C" />
+    <br />
+    <button onclick="checkTemperature()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkTemperature() {
+        const temperatureInput = document.getElementById('temperatureInput').value;
+        const resultDiv = document.getElementById('result');
+        const temperature = parseFloat(temperatureInput);
+
+        if (temperature ===""){
+            resultDiv.textContent = "Please enter a temperature.";
+                return;
+            }
+            if (temperature < 0) {
+                resultDiv.textContent = "It's freezing!";
+                resultDiv.style.color = "blue";
+            } else if (temperature >= 0 && temperature <= 20) {
+                resultDiv.textContent = "It's cold.";
+                resultDiv.style.color = "lightblue";
+            } else if (temperature > 20 && temperature <= 30) {
+                resultDiv.textContent = "It's warm.";
+                resultDiv.style.color = "orange";
+            } else {
+                resultDiv.textContent = "It's hot!";
+                resultDiv.style.color = "red";
+            }
+                
+    }
+   
+  </script>
+</body>
+</html>

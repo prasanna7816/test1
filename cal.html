@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>simple</title>
+        <style>
+           
+        </style>
+        
+       
+    </head>
+    <body>
+        <h2> simple calculator</h2>
+        <form name="myForm">
+          <input type="text" id="first" name="first"><br><br>
+          <input type="text" id="second" ><br><br>
+          <input type="button" name=""value="ADD" onclick="add()">
+
+
+
+          <input type="button" name=""value="SUB">
+          <input type="button" name=""value="MULTIPLY">
+          <input type="button" name=""value="DEVIDE"><br><br>
+          <input type="text" name="result">
+          <input type="text" name="clear">
+
+          <button id="1" value="1">1</button>
+          <button id="2" value="2">2</button>
+          <button id="=" onclick="equals()">=</button>
+
+          <p id="addition"></p>
+
+        </form>
+
+        <script>
+            function equals(){
+
+                // let a = parseFloat(document.getElementById('1').value);
+                // let b = parseFloat(document.getElementById('2').value);
+                // let add = parseFloat(document.getElementById('1').value) + parseFloat(document.getElementById('2').value);
+                document.getElementById('addition').innerHTML = parseFloat(document.getElementById('1').value) + parseFloat(document.getElementById('2').value);
+                console.log(add);
+            }
+
+
+
+            function add() {
+                let num1 = parseFloat(document.getElementById('first').value); 
+                let num2 = parseFloat(document.getElementById('second').value);
+                let sum =  num1 + num2;
+                console.log("Sum: " + sum);
+
+
+
+
+               let first =parseInt (myForm.first.value);
+                second=parseInt(myForm.second.value);
+                result= first+ second;
+                myForm.result.value=result;
+            }
+        </script>
+    </body>
+</html> 

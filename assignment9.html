@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, pink, rgb(109, 109, 238));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create an array of fruits. </h1>
+        <button onclick="displayFruits()">Display Fruits</button>
+        <div id="result"></div>
+        <script>
+            function displayFruits() {
+  const fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+  const fruitList = document.getElementById("result");
+  
+  fruitList.innerHTML = "";
+  for (const fruit of fruits) {
+    fruitList.innerHTML += "<li>" + fruit + "</li>";
+  }
+}
+
+        </script>
+</body>
+</html>

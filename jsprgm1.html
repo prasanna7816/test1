@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pass/fail</title>
+</head>
+<body>
+    <input type="text" class="in"  id="student"placeholder="enter marks"><br><br>
+    <p id="result"></p>
+
+    <button  onclick="prasaNna()"> result</button>
+    
+
+
+
+    <script>
+        let outputElement=document.getElementById("result");
+        function prasaNna(){
+            let marks=document.getElementById("student").value;
+            if (marks >= 85){
+                alert("Excellent");
+            }
+            else if (marks >= 75){
+                alert("Distinction");
+            }
+            else if(marks >= 30){
+                alert("Pass");
+            }
+            else {
+                alert("Fail");
+            }
+        }
+         
+
+    </script>
+    
+</body>
+</html>

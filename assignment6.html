@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiples of 5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+     background-image: url("image/maths.jpg");
+    }
+    h1 {
+      color: #333;
+    }
+    .multiples {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .number {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Multiples of 5 between 1 and 100</h1>
+  <div class="multiples" id="output"></div>
+  
+
+  <script>
+    const output = document.getElementById("output");
+
+    for (let i = 1; i <= 100; i++) {
+      if (i % 5 === 0) {
+        const number = document.createElement("span");
+        number.className = "number";
+        number.textContent = i;
+        output.innerHTML += number.outerHTML;
+      }
+    }
+  </script>
+
+</body>
+</html>

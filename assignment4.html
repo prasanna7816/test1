@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, pink, rgb(109, 109, 238));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Calculator</h2>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <select id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <button ondblclick="calculate()">Calculate</button>
+        <div id="result"></div>
+
+
+        <script>
+            function calculate() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+                const operation = document.getElementById("operation").value;
+                let result = document.getElementById("result");
+
+                if (num1 === "" || num2 === "") {
+                    result.innerHTML = "Please enter valid numbers.";
+                    return;
+                }else if (operation === "add") {
+                    result.innerHTML = `Result: ${num1 + num2}`;
+                } else if (operation === "subtract") {
+                    result.innerHTML = `Result: ${num1 - num2}`;
+                } else if (operation === "multiply") {
+                    result.innerHTML = `Result: ${num1 * num2}`;
+                } else if (operation === "divide") {
+                    if (num2 === 0) {
+                        result.innerHTML = "Cannot divide by zero.";
+                    } 
+                } else {
+                    result.innerHTML = "Please select a valid operation.";
+                }
+
+            }
+            
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class id="container">
+      <h2>Range Check</h2>
+      <label>Enter a number:</label>
+      <input type="number" id="number"><br><br>
+
+      <label>Enter minimum range:</label>
+      <input type="number" id="min"><br><br>
+
+      <label>Enter maximum range:</label>
+      <input type="number" id="max"><br><br>
+
+      <button onclick="checkRange()">Check</button>
+      <p id="result"></p>
+    </div>
+
+
+  <script>
+    function checkRange() {
+     
+        let number = parseFloat(document.getElementById('number').value);
+        let min = parseFloat(document.getElementById('min').value);
+        let max = parseFloat(document.getElementById('max').value);
+        let result = document.getElementById('result');
+        if (isNaN(number) || isNaN(min) || isNaN(max)) {
+            result.textContent = "Please enter valid numbers in all fields.";
+            result.style.color = "red";
+        }
+        
+        
+        if (min > max) {
+        result.textContent = "Minimum range cannot be greater than maximum.";
+        result.style.color = "red";
+        
+        }
+        if (number >= min && number <= max) {
+            result.textContent = `${number} is within the range of ${min} to ${max}.`;
+            result.style.color = "green";
+        } 
+        else {
+            result.textContent = `${number} is outside the range of ${min} to ${max}.`;
+            result.style.color = "orange";
+        }
+    }
+
+  </script>
+    
+</body>
+</html>

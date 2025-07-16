@@ -1,0 +1,28 @@
+.image{
+   
+    animation: rotate360  linear infinite;
+
+}
+@keyframes rotate360{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform :rotate(180deg);
+    }
+
+}
+.raji{
+   
+    animation: rotate360  linear infinite;
+
+}
+@keyframes rotate360{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform :rotate(360deg);
+    }
+
+}

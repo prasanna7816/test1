@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assign4</title>
+</head>
+<body>
+    <h2>grades</h2>
+    <button onclick="submit()">Submit</button>
+
+    
+
+
+
+    <script>
+        
+       function submit(){
+        
+       {let students = [{name: "prasanna",grades: {math: 90,english: 85,science: 92}},{name: "kamala",grades: {math: 78,english: 88,science: 80}}];
+  
+        for (let student of students) {
+          console.log("Student Name:" + student.name);
+          console.log("Grades:");
+
+        for (let subject in student.grades) {
+           console.log(subject + ": " + student.grades[subject]);
+        }
+
+         console.log(" ")
+    
+        }
+     }
+    }
+    </script>  
+
+    
+</body>
+</html>
