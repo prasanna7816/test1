@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global vs Local Scope</title>
+</head>
+<body>
+
+<h2>Check Console for Output</h2>
+<result id="result">
+
+<script>
+  
+  let message = "Hello from Global!";
+
+  function showMessage() {
+   
+    
+    let message = "Hello from Local!";
+    console.log("Inside function: " + message);  
+  }
+
+  showMessage();  
+  console.log("Outside function: " + message); 
+  
+</script>
+
+</body>
+</html>

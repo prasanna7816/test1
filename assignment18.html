@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle Visibility</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .Para {
+      margin-top: 10px;
+      font-size: 18px;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Toggle Paragraph Visibility</h2>
+  
+  
+  <button onclick="toggleParagraph()">Show/Hide Paragraph</button>
+
+  
+  <p id="Para">This is a paragraph that will be shown or hidden when you click the button.</p>
+
+
+  <script>
+    function toggleParagraph() {
+      let para = document.getElementById("Para");
+      
+      if (para.style.display === "none") {
+        para.style.display = "block"; 
+      } else {
+        para.style.display = "none";  
+    }
+}
+  </script>
+
+</body>
+</html>

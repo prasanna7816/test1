@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input and Greeting</title>
+</head>
+<style>
+body{
+    text-align: center;
+     background-color: antiquewhite;
+}
+</style>
+<body>
+  <h2>Greeting App</h2>
+
+  <label for="nameInput">Enter your name:</label>
+  <input type="text" id="nameInput" placeholder="Your name">
+  <button onclick="greetUser()">Greet Me</button>
+
+  <p id="greetingOutput"></p>
+
+  <script>
+    function greetUser() {
+      const name = document.getElementById("nameInput").value;
+      const output = document.getElementById("greetingOutput");
+      
+      if (name === "") {
+        output.textContent = "Please enter your name!";
+        output.style.color = "red";
+      } else {
+        output.textContent = "Hello How are u : " + name + " ";
+        output.style.color = "blue";
+    
+      }
+    }
+  </script>
+</body>
+</html>

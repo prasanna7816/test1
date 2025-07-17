@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Counter with Closure</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+
+
+
+    
+  </style>
+</head>
+<body>
+
+<h2>Counter Using Closure</h2>
+
+<button onclick="increaseCount()">Click to Increase</button>
+
+<div id="result">Current Count: 0</div>
+
+<script>
+ 
+  function createCounter() {
+    let count = 0; 
+   
+    return function () {
+      count++; 
+      return count;
+    };
+  }
+
+  
+  let counter = createCounter(); 
+
+  
+  function increaseCount() {
+    let current = counter(); 
+    document.getElementById("result").innerText = "Current Count: " + current;
+  }
+</script>
+
+</body>
+</html>
